@@ -19,6 +19,7 @@ import {
 
 import { CardWrapper } from "./card-wrapper";
 import { FormError } from "../form-error";
+import { FormSuccess } from "../form-success";
 export const LoginForm = () => {
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -67,12 +68,13 @@ export const LoginForm = () => {
                   <FormControl>
                     <Input {...field} placeholder="******" type="password" />
                   </FormControl>
-                  <FormMessage></FormMessage>
+                  <FormMessage ></FormMessage>
                 </FormItem>
               )}
             />
           </div>
-          <FormError></FormError>
+          <FormError message=""></FormError>
+          <FormSuccess message=""></FormSuccess>
           <Button className="w-full" type="submit">
             Login
           </Button>
