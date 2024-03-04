@@ -18,6 +18,7 @@ import {
 } from "@/components/ui/form";
 
 import { CardWrapper } from "./card-wrapper";
+import { FormError } from "../form-error";
 export const LoginForm = () => {
   const form = useForm<z.infer<typeof LoginSchema>>({
     resolver: zodResolver(LoginSchema),
@@ -71,6 +72,7 @@ export const LoginForm = () => {
               )}
             />
           </div>
+          <FormError></FormError>
           <Button className="w-full" type="submit">
             Login
           </Button>
